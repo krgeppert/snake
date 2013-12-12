@@ -1,0 +1,22 @@
+.box {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin: 1px;
+}
+div .row {
+  margin: -7px;
+}
+.board {
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lose-message{
+  top: 30%;
+  left:40%;
+  position: fixed;
+  z-index: 1000;
+  text-align: center;
+}

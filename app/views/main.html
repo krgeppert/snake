@@ -1,0 +1,24 @@
+<div ng-show="!gameInProgress">
+	<button ng-click="startGame()">Play</button>
+	Slow:<input type="radio" ng-model="speed" value="slow">
+	Medium:<input type="radio" ng-model="speed" value="medium">
+	Fast:<input type="radio" ng-model="speed" value="fast">
+</div>
+Move with directional keys.
+r: restart
+p: pause
+q: quit game
+<h3>Score: {{score}}</h3>
+<div class="board" style="width:{{board.size * 13}}px">
+	<div ng-repeat="rows in board">
+		<div class="row" ng-repeat="columns in rows track by $index">
+			<div class="box" style="background-color:{{getPixelColor(piece)}}" ng-repeat="piece in columns track by $index"></div>
+		</div>
+	</div>
+</div>
+<div ng-show="gameOver" class="lose-message">
+	<h1 >YOU LOSE!!!!</h1>
+</div>
+<div ng-show="paused" class="lose-message">
+	<h1>Paused</h1>
+</div>
